@@ -24,13 +24,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7370631155511007763}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7370631155511007765
 MonoBehaviour:
@@ -46,6 +46,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bossPrefabs:
   - {fileID: 5585277940836723801, guid: 22cf176eb826d134498e9173471f8cbe, type: 3}
-  - {fileID: 5585277940836723801, guid: b74fd01bc0c057c4c878bc5197788f55, type: 3}
-  - {fileID: 5585277940836723801, guid: f9567abdfa0070f4caeee388ab1c91c9, type: 3}
   - {fileID: 5585277940836723801, guid: 181772631a9e9a649a981af035567cf8, type: 3}
+  - {fileID: 5585277940836723801, guid: f9567abdfa0070f4caeee388ab1c91c9, type: 3}
+  - {fileID: 5585277940836723801, guid: b74fd01bc0c057c4c878bc5197788f55, type: 3}
