@@ -349,6 +349,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 95366285375505278, guid: c40ca70124396bd499dc98a0a91e7390,
+        type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: a4a3ba617ed9c5946bb76844ec1ef299, type: 3}
+    - target: {fileID: 95366285375505278, guid: c40ca70124396bd499dc98a0a91e7390,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c1bdfd787bfb97c40bc6a5c41703d4b7, type: 2}
+    - target: {fileID: 95366285375505278, guid: c40ca70124396bd499dc98a0a91e7390,
+        type: 3}
+      propertyPath: m_ApplyRootMotion
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 195842537559275850, guid: c40ca70124396bd499dc98a0a91e7390, type: 3}
     - {fileID: 114067166948632378, guid: c40ca70124396bd499dc98a0a91e7390, type: 3}
