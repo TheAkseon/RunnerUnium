@@ -5,8 +5,8 @@ public class WebShooting : MonoBehaviour
     public static WebShooting Instance;
 
     [SerializeField] private GameObject Web;
-    
-    [SerializeField] private float _baseFiringRate = 1f; // Нужно сохранять
+
+    [SerializeField] private float _baseFiringRate = 1f; // пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     [SerializeField] private float _firingRate = 1f;
 
     private Transform _playertransform;
@@ -26,9 +26,9 @@ public class WebShooting : MonoBehaviour
         _currentTimeBetweenShots = 1 / _firingRate;
 
         WebBullet.SetBaseDamage(SaveData.Instance.Data.BaseDamage);
-        Debug.Log("Сейчас дамаг равен - " + SaveData.Instance.Data.BaseDamage);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - " + SaveData.Instance.Data.BaseDamage);
         _firingRate = SaveData.Instance.Data.BaseFiringRate;
-        Debug.Log("Сейчас скорость стрельбы равна - " + _firingRate);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ - " + _firingRate);
         _baseFiringRate = _firingRate;
         WebBullet.SetDamage(WebBullet.GetBaseDamage());
         WebBullet.SetLifeTime(WebBullet.GetBaseLifeTime());
@@ -39,8 +39,8 @@ public class WebShooting : MonoBehaviour
     public void ChangeShootMode(GateType mode) => _shootMode = mode.ToString();
     public void ChangeBaseFiringRate(float value)
     {
-        Debug.Log("обычный firing rate " + _firingRate);
-        Debug.Log("базовый firing rate " + _baseFiringRate);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ firing rate " + _firingRate);
+        Debug.Log("пїЅпїЅпїЅпїЅпїЅпїЅпїЅ firing rate " + _baseFiringRate);
         _baseFiringRate += value;
         SetFiringRate(_baseFiringRate);
     }
@@ -66,7 +66,7 @@ public class WebShooting : MonoBehaviour
                 switch (_shootMode)
                 {
                     case "SingleShootMode":
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 0.5f), rotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 0.5f), Quaternion.identity);
                         break;
                     case "DoubleShootMode":
                         Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 0.5f), rotation);
@@ -85,6 +85,6 @@ public class WebShooting : MonoBehaviour
                 _currentTimeBetweenShots = 1 / _firingRate;
             }
             _currentTimeBetweenShots -= Time.fixedDeltaTime;
-        } 
+        }
     }
 }
