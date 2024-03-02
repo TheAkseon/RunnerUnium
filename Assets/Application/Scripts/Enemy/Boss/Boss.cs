@@ -25,7 +25,11 @@ public class Boss : MonoBehaviour
 
     private void Start()
     {
-        _force = 30 + SceneManager.GetActiveScene().buildIndex * 5;
+        int force = SaveData.Instance.Data.BaseDamage;
+        int healthMultiplier = Random.Range(10, 15);
+        int health = force * healthMultiplier;
+        
+        _force = 30 + health;
         _countForceText.text = _force.ToString();
     }
 
