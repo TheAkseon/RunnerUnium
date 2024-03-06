@@ -218,7 +218,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleValue: 1
-  _hitParticle: {fileID: 2428951010242803275}
+  _hitParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
+    type: 3}
+  _hitBulletParticle: {fileID: 4021103657954561961, guid: 5c755f9bc5253ea418e919994537dcc7,
+    type: 3}
 --- !u!65 &4533281541260227195
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -29,7 +29,6 @@ public class Enemy : MonoBehaviour
             PlayerModifier.Instance.Die();
             Destroy(gameObject);
         }
-
         if (other.gameObject.TryGetComponent(out WebBehaviour _))
         {
             SoundsManager.Instance.PlaySound("WebHit");

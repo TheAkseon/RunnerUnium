@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float _timeApplyInvulnerble = 0.1f;
 
     [Space]
-    [Range(0, 1)][SerializeField] float _smoothHorizontalTime = 0.2f;
+    // [Range(0, 1)][SerializeField] float _smoothHorizontalTime = 0.2f;
 
     private Vector3 _playerPosition;
 
@@ -90,7 +90,7 @@ public class PlayerMove : MonoBehaviour
         {
             float movementVectorX = InputManager.GetAxis("Mouse X");
             float newPositionX = Mathf.Clamp(transform.position.x + movementVectorX, -_maxPosX, _maxPosX);
-            
+
             Vector3 newPosition = transform.position + new Vector3(newPositionX - transform.position.x, 0, 0) * speedX * Time.deltaTime;
             transform.position = newPosition;
         }
@@ -127,4 +127,3 @@ public class PlayerMove : MonoBehaviour
         _extendNitro = false;
     }
 }
-    

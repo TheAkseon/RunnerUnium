@@ -120,6 +120,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _obstacleValue: 1
   _hitParticle: {fileID: 7467253843027117931}
+  _hitBulletParticle: {fileID: 0}
 --- !u!1 &406518711849742325
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,7 +378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleValue: 1
-  _hitParticle: {fileID: 7467253843027117931}
+  _hitParticle: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
+    type: 3}
+  _hitBulletParticle: {fileID: 0}
 --- !u!1 &7467253843027117931
 GameObject:
   m_ObjectHideFlags: 0
