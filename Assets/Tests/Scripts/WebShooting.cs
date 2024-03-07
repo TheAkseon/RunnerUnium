@@ -66,16 +66,16 @@ public class WebShooting : MonoBehaviour
                 switch (_shootMode)
                 {
                     case "SingleShootMode":
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), Quaternion.identity);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), Quaternion.identity);
                         break;
                     case "DoubleShootMode":
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), rotation);
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), leftRotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), rotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), leftRotation);
                         break;
                     case "TripleShootMode":
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), rotation);
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), leftRotation);
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 3f), rightRotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), rotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), leftRotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), rightRotation);
                         break;
                     default:
                         Debug.LogError("Uncorrect shoot mode!");
