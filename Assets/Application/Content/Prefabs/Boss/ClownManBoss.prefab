@@ -6913,12 +6913,7 @@ Animator:
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
-  m_WarningMessage: "\nBinding warning: Some generic clip(s) animate transforms that
-    are already bound by a Humanoid avatar. These transforms can only be changed
-    by Humanoid clips.\n\tTransform 'Root_M'\n\tTransform 'Ankle_L'\n\tTransform
-    'Scapula_R'\n\tTransform 'MiddleFinger1_L'\n\tTransform 'Hip_L'\n\tTransform
-    'IndexFinger2_R'\n\tTransform 'Chest_M'\n\tTransform 'Head_M'\n\tTransform 'ThumbFinger2_L'\n\tTransform
-    'Ankle_R'\n\tand more ...\n\tFrom animation clip 'Idle_Generic'"
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
@@ -8115,6 +8110,7 @@ MonoBehaviour:
   _speedChangePlayerPosition: 0.05
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
+  _bullet: {fileID: 4983408883102004539, guid: 035a95a9106297c469356eb4607d0e86, type: 3}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
   _bossFightCamera: {fileID: 671037541736680393}

@@ -33,11 +33,11 @@ public class BossFight : MonoBehaviour
     {
         if (_isPreFinish)
         {
-            // Позиция X постепенно меняется от текущего значения до 0
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ X пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 0
             float x = Mathf.MoveTowards(_player.transform.position.x, _player.transform.position.y, Time.deltaTime * 2f);
             _player.transform.position = new Vector3(x, _player.transform.position.y, _player.transform.position.z);
 
-            // Поворот по Y постепенно меняется от текущего значения до 0
+            // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ Y пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ 0
             float rotation = Mathf.MoveTowardsAngle(_player.transform.eulerAngles.y, 0, Time.deltaTime * 100f);
             _player.transform.localEulerAngles = new Vector3(0, rotation, 0);
         }
@@ -67,7 +67,7 @@ public class BossFight : MonoBehaviour
         Instantiate(_effectHitPrefab, _particleHitPosition.position, transform.rotation);
     }
 
-    // Сражение началось
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     private void OnBossFighted(Boss boss)
     {
         UIBehaviour.Instance.BossFight();
