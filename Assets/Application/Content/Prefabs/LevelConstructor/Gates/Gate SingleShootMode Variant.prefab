@@ -12,12 +12,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: eeab0c13dd0a176438b74838ee5a89de,
+      objectReference: {fileID: 21300000, guid: eb230fa617b689542b897b1921483f69,
         type: 3}
     - target: {fileID: 538792789083379668, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
       propertyPath: m_Color.a
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 538792789083379668, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
@@ -27,17 +27,27 @@ PrefabInstance:
     - target: {fileID: 538792789083379668, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.018588543
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 538792789083379668, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
       propertyPath: m_Color.r
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4280543314080670655, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
+        type: 3}
+      propertyPath: _deformationType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6555268846609394348, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
+        type: 3}
+      propertyPath: m_text
+      value: "\u0414\u0432\u043E\u0439\u043D\u043E\u0439 \u0432\u044B\u0441\u0442\u0440\u0435\u043B"
       objectReference: {fileID: 0}
     - target: {fileID: 6555268846609394348, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
       propertyPath: m_fontSize
-      value: 18.4
+      value: 21.4
       objectReference: {fileID: 0}
     - target: {fileID: 7360079723488304324, guid: 25d3c468b2f130c46a20c24b14cfa9f8,
         type: 3}
