@@ -123,9 +123,6 @@ public class UIBehaviour : MonoBehaviour
             image.sprite = notSprite;
 
         SaveData.Instance.Save();
-#if UNITY_WEBGL && !UNITY_EDITOR
-        SaveData.Instance.SaveYandex();
-#endif
     }
 
     public void Victory()
@@ -157,19 +154,17 @@ public class UIBehaviour : MonoBehaviour
 
     public void Continue()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
         Time.timeScale = 0f;
         //здесь скорее всего нужно добавить плашку через 3 2 1 реклама
-        YandexAds.Instance.ShowRewardAd();
+        YandexAds.Instance.ShowRewardAd(1);
         StartCoroutine(CheckRewarded());
-#else
+
         _gameOverPanel.SetActive(false);
         _inputSlider.SetActive(true);
         PlayerModifier.Instance.Reberth();
         PlayerMove.Instance.ResumeMovement();
         PlayerMove.Instance.ApplyInvulnerable();
         PlayerAnimationController.Instance.Run();
-#endif
     }
 
     public void GameOver(bool _isBoss)
@@ -199,9 +194,7 @@ public class UIBehaviour : MonoBehaviour
 
     public void Advertisement()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        YandexAds.Instance.ShowRewardAd();
-#endif
+        YandexAds.Instance.ShowRewardAd(1);
     }
 
     public void UpdateCoins(int count)
