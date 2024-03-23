@@ -21,6 +21,12 @@ namespace Plugins.Audio.Core
             set => _audioSource.mute = value;
         }
 
+        public bool MuteEffects
+        {
+            get => _effectsAudioSource.mute;
+            set => _effectsAudioSource.mute = value;
+        }
+
         public float Pitch
         {
             get => _audioSource.pitch;

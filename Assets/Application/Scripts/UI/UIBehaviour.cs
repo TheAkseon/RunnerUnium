@@ -115,6 +115,7 @@ public class UIBehaviour : MonoBehaviour
             SaveData.Instance.Data.muteEffects = muteEffects;
             state = muteEffects;
             SoundsManager.Instance.Mute(type, muteEffects);
+            Debug.Log("Ёффекты");
         }
 
         if (!state)
