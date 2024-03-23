@@ -8110,7 +8110,6 @@ MonoBehaviour:
   _speedChangePlayerPosition: 0.05
   _effectHitPrefab: {fileID: 1845240806346120, guid: 9629ae2ae85c73b45bd07d4ea6e6f9f7,
     type: 3}
-  _bullet: {fileID: 4983408883102004539, guid: 035a95a9106297c469356eb4607d0e86, type: 3}
   _particleHitPosition: {fileID: 1743849160922173346}
   _effectDiePrefab: {fileID: 7388629540683307657}
   _bossFightCamera: {fileID: 671037541736680393}
@@ -9244,7 +9243,7 @@ Transform:
   m_GameObject: {fileID: 6046117597976937167}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.7, y: -0.1777, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9760,14 +9759,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6500133997600791590}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.07730175, y: -0.2995014, z: 0.021126116, w: 0.95072454}
-  m_LocalPosition: {x: 11.42, y: 6.3, z: -10}
+  m_LocalRotation: {x: 0.07021576, y: -0.44482225, z: 0.035008278, w: 0.8921756}
+  m_LocalPosition: {x: 11.42, y: 6.3, z: -10.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2087732241669309152}
   m_Father: {fileID: 2366301769757783704}
-  m_LocalEulerAnglesHint: {x: 9.186, y: -35, z: -0.356}
+  m_LocalEulerAnglesHint: {x: 9, y: -53, z: 0}
 --- !u!1 &6501492641623673896
 GameObject:
   m_ObjectHideFlags: 0
