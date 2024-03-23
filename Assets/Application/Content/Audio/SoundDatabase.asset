@@ -85,10 +85,10 @@ MonoBehaviour:
     Name: CatchBonus.mp3
     Preload: 1
     _id: 73a4dd0c-924e-4e05-9b96-b4ea433cd09e
-  - Clip: {fileID: 8300000, guid: 13d097ab4293a08488a2a26ce894891a, type: 3}
+  - Clip: {fileID: 8300000, guid: cc437aa4b000ee04f9a725f3c7631266, type: 3}
     Key: CatchCoin
     FolderPath: Application\Content\Audio\Effects\
-    Name: CatchCoin.mp3
+    Name: CatchBonus.mp3
     Preload: 1
     _id: 8e2322b6-7fc4-499c-ad69-9e5d14e4e5da
   - Clip: {fileID: 8300000, guid: 7b17799c1c1d234409d8878ab57ed1fa, type: 3}
