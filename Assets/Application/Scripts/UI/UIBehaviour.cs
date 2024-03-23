@@ -39,6 +39,7 @@ public class UIBehaviour : MonoBehaviour
     [Header("Game Over Panel")]
     [SerializeField] GameObject _continueButton;
     [SerializeField] GameObject _restartButton;
+    public TimerAfterAds timerAfterAds;
 
     private bool muteMusic;
     private bool muteEffects;
@@ -109,7 +110,7 @@ public class UIBehaviour : MonoBehaviour
             SoundsManager.Instance.Mute(type, muteMusic);
         }
         else
-        { 
+        {
             image = effectsButton.transform.GetChild(1).GetComponent<UnityEngine.UI.Image>();
             muteEffects = !muteEffects;
             SaveData.Instance.Data.muteEffects = muteEffects;
@@ -159,16 +160,15 @@ public class UIBehaviour : MonoBehaviour
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         Time.timeScale = 0f;
-        //здесь скорее всего нужно добавить плашку через 3 2 1 реклама
+        //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ 3 2 1 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         YandexAds.Instance.ShowRewardAd();
         StartCoroutine(CheckRewarded());
 #else
         _gameOverPanel.SetActive(false);
         _inputSlider.SetActive(true);
         PlayerModifier.Instance.Reberth();
-        PlayerMove.Instance.ResumeMovement();
-        PlayerMove.Instance.ApplyInvulnerable();
-        PlayerAnimationController.Instance.Run();
+        // PlayerMove.Instance.ResumeMovement();
+        timerAfterAds.TimerStart();
 #endif
     }
 
@@ -221,7 +221,7 @@ public class UIBehaviour : MonoBehaviour
 
     public void WebBulletFiringRateIncrease() => CoinManager.Instance.SpendMoney(ImprovementsBehaviour.Instance.CostOfFiringRateImprovements, FiringRate);
 
-    public void HitBoss() 
+    public void HitBoss()
     {
         Boss.Instance.TakeDamage(WebBullet.GetDamage());
 

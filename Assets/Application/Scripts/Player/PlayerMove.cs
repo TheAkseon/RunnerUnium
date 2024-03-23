@@ -98,7 +98,10 @@ public class PlayerMove : MonoBehaviour
 
     public void StopMovement() => _canMove = false;
 
-    public void ResumeMovement() => _canMove = true;
+    public void ResumeMovement()
+    {
+        _canMove = true;
+    }
 
     public bool CanMove() => _canMove;
 
