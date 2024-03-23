@@ -10,7 +10,6 @@ public class SoundsManager : MonoBehaviour
 
     [Header("Audio Sources")]
     [SerializeField] private SourceAudio _soundsDatabase;
-    [SerializeField] private AudioSource effectsAudioSource;
 
     private float _startVolume;
 
@@ -62,7 +61,10 @@ public class SoundsManager : MonoBehaviour
         if (source.Equals("music"))
             _soundsDatabase.Mute = value;
         else
-            effectsAudioSource.mute = value;
+        {
+            _soundsDatabase.MuteEffects = value;
+            Debug.Log("Ёффекты сайн менеджер");
+        }
     }
 
     public void FadeOut()
