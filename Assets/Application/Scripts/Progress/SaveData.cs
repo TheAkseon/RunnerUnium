@@ -73,13 +73,13 @@ public class SaveData : MonoBehaviour
 [Serializable]
 public class DataHolder
 {
-    public int Coins;
-    public int CurrentLevel;
-    public int FakeLevel;
-    public bool muteMusic;
-    public bool muteEffects;
-    public int CostOfDamageImprovements;
-    public int CostOfFiringRateImprovements;
-    public int BaseDamage;
-    public float BaseFiringRate;
+    public int Coins = 0;
+    public int CurrentLevel = 1;
+    public int FakeLevel = 1;
+    public bool muteMusic = false;
+    public bool muteEffects = false;
+    public int CostOfDamageImprovements = 10;
+    public int CostOfFiringRateImprovements = 10;
+    public int BaseDamage = 2;
+    public float BaseFiringRate = 2;
 }

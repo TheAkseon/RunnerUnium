@@ -8,8 +8,6 @@ using System;
 public class LevelLoader : MonoBehaviour
 {
     public static LevelLoader Instance;
-    public Slider slider;
-    public TMP_Text progressText;
 
     private void Awake()
     {
@@ -35,9 +33,6 @@ public class LevelLoader : MonoBehaviour
         while (operation.isDone == false)
         {
             float progress = Mathf.Clamp01(operation.progress / .9f);
-            
-            slider.value = progress;
-            progressText.text = progress * 100f + "%";
 
             yield return null;
         }
