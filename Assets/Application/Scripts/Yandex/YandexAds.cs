@@ -57,7 +57,6 @@ public class YandexAds : MonoBehaviour
 
     public void OnAdOpen()
     {
-        _isRewarded = false;
         YandexSDK.Instance.IsAdRunning = true;
         Time.timeScale = 0;
         AudioListener.volume = 0;
@@ -74,6 +73,11 @@ public class YandexAds : MonoBehaviour
     public void OnAdRewarded()
     {
         _isRewarded = true;
+    }
+
+    public void OnAdRewardedFalse()
+    {
+        _isRewarded = false;
     }
 
     /*public void OnIterstitialAddClose(bool value)

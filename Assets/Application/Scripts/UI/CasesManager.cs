@@ -122,6 +122,7 @@ public class CasesManager : MonoBehaviour
         SaveData.Instance.Data.Coins += _items[buttonId].value;
         UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
         CoinManager.Instance.UpdateView();
+        YandexAds.Instance.OnAdRewardedFalse();
     }
 
     public void SetAds()
