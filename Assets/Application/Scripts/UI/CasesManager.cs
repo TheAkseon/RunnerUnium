@@ -61,7 +61,7 @@ public class CasesManager : MonoBehaviour
             {
                 OpenCase(buttonId);
 
-                if(_adsButton.activeSelf == false)
+                if (_adsButton.activeSelf == false)
                 {
                     _adsButton.SetActive(true);
                 }
@@ -87,7 +87,7 @@ public class CasesManager : MonoBehaviour
 
     private IEnumerator CheckRewarded(int buttonId)
     {
-        while(YandexAds.Instance.IsRewarded == false)
+        while (YandexAds.Instance.IsRewarded == false)
         {
             yield return null;
         }
@@ -138,18 +138,18 @@ public class CasesManager : MonoBehaviour
         _exitButton.SetActive(true);
     }
 
-    public void WatchAds()
-    {
-        YandexAds.Instance.ShowRewardAd(1);
-        SaveData.Instance.Data.Coins += _amount;
-        CoinManager.Instance.UpdateView();
-        UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
-        _adsButton.SetActive(false);
-    }
+    // public void WatchAds()
+    // {
+    //     YandexAds.Instance.ShowRewardAd(1);
+    //     SaveData.Instance.Data.Coins += _amount;
+    //     CoinManager.Instance.UpdateView();
+    //     UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
+    //     _adsButton.SetActive(false);
+    // }
 
     public void ExitCases()
     {
-        //здесь можно добавить рекламу, но только с плашкой 3 2 1 реклама
+        //пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ 3 2 1 пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         gameObject.SetActive(false);
         LevelBehaviour.Instance.NextLevel();
         SaveData.Instance.SaveYandex();
