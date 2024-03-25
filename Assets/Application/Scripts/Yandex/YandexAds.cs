@@ -42,7 +42,7 @@ public class YandexAds : MonoBehaviour
     {
         if (id == 1)
         {
-            OnAdRewarded();
+            
         }
         else if (id == 2)
         {
@@ -57,6 +57,7 @@ public class YandexAds : MonoBehaviour
 
     public void OnAdOpen()
     {
+        _isRewarded = false;
         YandexSDK.Instance.IsAdRunning = true;
         Time.timeScale = 0;
         AudioListener.volume = 0;
@@ -67,7 +68,7 @@ public class YandexAds : MonoBehaviour
         YandexSDK.Instance.IsAdRunning = false;
         Time.timeScale = 1;
         AudioListener.volume = 1;
-        _isRewarded = false;
+        OnAdRewarded();
     }
 
     public void OnAdRewarded()
