@@ -74,7 +74,7 @@ public class CasesManager : MonoBehaviour
             else
             {
                 YandexAds.Instance.ShowRewardAd(1);
-                OpenCase(buttonId);
+                StartCoroutine(CheckRewarded(buttonId));
 
 
                 // if (_adsButton.activeSelf == false)
@@ -121,6 +121,7 @@ public class CasesManager : MonoBehaviour
         _amount += _items[buttonId].value;
         SaveData.Instance.Data.Coins += _items[buttonId].value;
         UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
+        CoinManager.Instance.UpdateView();
     }
 
     public void SetAds()

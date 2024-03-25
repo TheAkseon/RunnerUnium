@@ -160,8 +160,7 @@ public class UIBehaviour : MonoBehaviour
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         Time.timeScale = 0f;
-        //����� ������ ����� ����� �������� ������ ����� 3 2 1 �������
-        YandexAds.Instance.ShowRewardAd();
+        YandexAds.Instance.ShowRewardAd(1);
         StartCoroutine(CheckRewarded());
 #else
         _gameOverPanel.SetActive(false);
@@ -200,7 +199,7 @@ public class UIBehaviour : MonoBehaviour
     public void Advertisement()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
-        YandexAds.Instance.ShowRewardAd();
+        YandexAds.Instance.ShowRewardAd(1);
 #endif
     }
 
