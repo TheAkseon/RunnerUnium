@@ -21,6 +21,8 @@ public class GateAppearaence : MonoBehaviour
     [Header("Colors")]
     [SerializeField] Color _colorPositive;
     [SerializeField] Color _colorNegative;
+    [SerializeField] Color _colorShootMode;
+
 
     [Header("Title Icons")]
     // »конки увеличени€/уменьшени€ ширины
@@ -59,7 +61,7 @@ public class GateAppearaence : MonoBehaviour
         else if (value > 0)
         {
             prefix = "+";
-            SetColor(_colorPositive);
+            //SetColor(_colorPositive);
         }
         else
         {
@@ -93,6 +95,16 @@ public class GateAppearaence : MonoBehaviour
             GateType.TripleShootMode => _tripleShootSprite,
             _ => null
         };
+
+        if(GateType.SingleShootMode == deformationType || GateType.DoubleShootMode == deformationType)
+        {
+            SetColorShootMode(_colorShootMode);
+        }
+
+        if (GateType.Damage == deformationType || GateType.FiringFrequency == deformationType || GateType.LifeTime == deformationType)
+        {
+            SetColor(_colorPositive);
+        }
     }
 
     void SetColor(Color color) {
@@ -102,6 +114,10 @@ public class GateAppearaence : MonoBehaviour
         _glassImage.color = new Color(color.r, color.g, color.b, 0.5f);
     }
 
+    void SetColorShootMode(Color color)
+    {
+            _downImage.color = color;
+    }
 }
 
 

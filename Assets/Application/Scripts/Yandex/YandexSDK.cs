@@ -1,9 +1,8 @@
 using System;
 using System.Collections;
-using Agava.WebUtility;
-using Agava.YandexGames;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using YG;
 
 public class YandexSDK : MonoBehaviour
 {
@@ -29,54 +28,29 @@ public class YandexSDK : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        YandexGamesSdk.CallbackLogging = true;
     }
 
-    private IEnumerator Start()
+    private void Start()
     {
-#if !UNITY_WEBGL || UNITY_EDITOR
-        _levelLoader = FindObjectOfType<LevelLoader>();
-        SaveData.Instance.Load();
-
-        if (SaveData.Instance.Data == null)
+        if (YandexGame.SDKEnabled)
         {
-            SaveData.Instance.NewData();
+            GetLoad();
+            _levelLoader = FindObjectOfType<LevelLoader>();
+            _language = YandexGame.EnvironmentData.language;
+            _localization.SetLanguage(_language);
+            
+            LevelLoader.Instance.LoadLevel(SaveData.Instance.Data.CurrentLevel, GameReady);
         }
-
-        if (SaveData.Instance.Data.CurrentLevel == 0 && SaveData.Instance.Data.FakeLevel == 0)
-        {
-            SaveData.Instance.Data.CurrentLevel = 1;
-            SaveData.Instance.Data.FakeLevel = 1;
-            SaveData.Instance.Data.CostOfDamageImprovements = 10;
-            SaveData.Instance.Data.CostOfFiringRateImprovements = 20;
-            SaveData.Instance.Data.BaseDamage = 1;
-            SaveData.Instance.Data.BaseFiringRate = 1;
-        }
-
-        _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
-        yield return null;
-#else
-        yield return YandexGamesSdk.Initialize();
-
-        _language = YandexGamesSdk.Environment.i18n.lang;
-        _localization.SetLanguage(_language);
-
-        yield return GetData();
-
-        //InterstitialAd.Show(null, (bool _) => StartGame());
-        StartGame();
-#endif
     }
 
     private void OnEnable()
     {
-        WebApplication.InBackgroundChangeEvent += OnInBackgroundChange;
+        YandexGame.GetDataEvent += GetLoad;
     }
 
     private void OnDisable()
     {
-        WebApplication.InBackgroundChangeEvent -= OnInBackgroundChange;
+        YandexGame.GetDataEvent -= GetLoad;
     }
 
     private void OnInBackgroundChange(bool inBackground)
@@ -94,60 +68,23 @@ public class YandexSDK : MonoBehaviour
         SoundsManager.Instance.Mute("effects", value);
     }
 
-    private void StartGame()
+    private void GetLoad()
     {
-        if (YandexGamesSdk.IsInitialized)
-        {
-            _levelLoader = FindObjectOfType<LevelLoader>();
-            SaveData.Instance.Load();
+        SaveData.Instance.Data.Coins = YandexGame.savesData.Coins;
+        SaveData.Instance.Data.CurrentLevel = YandexGame.savesData.CurrentLevel;
+        SaveData.Instance.Data.FakeLevel = YandexGame.savesData.FakeLevel;
+        SaveData.Instance.Data.muteMusic = YandexGame.savesData.muteMusic;
+        SaveData.Instance.Data.muteEffects = YandexGame.savesData.muteEffects;
+        SaveData.Instance.Data.CostOfDamageImprovements = YandexGame.savesData.CostOfDamageImprovements;
+        SaveData.Instance.Data.CostOfFiringRateImprovements = YandexGame.savesData.CostOfFiringRateImprovements;
+        SaveData.Instance.Data.BaseDamage = YandexGame.savesData.BaseDamage;
+        SaveData.Instance.Data.BaseFiringRate = YandexGame.savesData.BaseFiringRate;
 
-            if (SaveData.Instance.Data == null)
-            {
-                SaveData.Instance.NewData();
-            }
-
-            if (SaveData.Instance.Data.CurrentLevel == 0 && SaveData.Instance.Data.FakeLevel == 0)
-            {
-                SaveData.Instance.Data.CurrentLevel = 1;
-                SaveData.Instance.Data.FakeLevel = 1;
-                SaveData.Instance.Data.CostOfDamageImprovements = 10;
-                SaveData.Instance.Data.CostOfFiringRateImprovements = 20;
-                SaveData.Instance.Data.BaseDamage = 1;
-                SaveData.Instance.Data.BaseFiringRate = 1;
-            }
-
-            //SaveData.Instance.SetLeaderboardScore();
-            _levelLoader.LoadLevel(SaveData.Instance.Data.CurrentLevel);
-        }
+        SaveManager.Save(_saveKey, SaveData.Instance.Data);
     }
 
-    private IEnumerator GetData()
+    private void GameReady()
     {
-        if (YandexGamesSdk.IsInitialized)
-        {
-            string loadedString = "None";
-
-            PlayerAccount.GetCloudSaveData((data) =>
-            {
-                loadedString = data;
-            });
-
-            while (loadedString == "None")
-            {
-                yield return null;
-            }
-
-            if (loadedString == "{}")
-            {
-                yield break;
-            }
-
-            SaveData.Instance._data = JsonUtility.FromJson<DataHolder>(loadedString);
-            SaveManager.Save(_saveKey, SaveData.Instance._data);
-        }
-        else
-        {
-            yield return YandexGamesSdk.Initialize();
-        }
+        YandexGame.GameReadyAPI();
     }
 }

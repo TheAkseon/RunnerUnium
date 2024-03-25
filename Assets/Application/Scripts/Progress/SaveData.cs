@@ -1,6 +1,6 @@
 using System;
-using Agava.YandexGames;
 using UnityEngine;
+using YG;
 
 public class SaveData : MonoBehaviour
 {
@@ -24,17 +24,6 @@ public class SaveData : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
-
-    public void NewData()
-    {
-        _data = new DataHolder();
-        _data.CurrentLevel = 1;
-        _data.FakeLevel = 1;
-        _data.CostOfDamageImprovements = 10;
-        _data.CostOfFiringRateImprovements = 20;
-        _data.BaseDamage = 1;
-        _data.BaseFiringRate = 1;
     }
 
     private void Update()
@@ -65,46 +54,32 @@ public class SaveData : MonoBehaviour
         _data = data;
     }
 
-    public void SetLeaderboardScore()
-    {
-        int current = _data.Score;
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-        Leaderboard.GetPlayerEntry(_leaderboardTxt, (result) =>
-        {
-            if (current >= result.score)
-                SaveBestScore(current);
-        });
-#endif
-    }
-
     public void SaveYandex()
     {
-#if UNITY_WEBGL && !UNITY_EDITOR
-        string jsonDataString = JsonUtility.ToJson(_data, true);
+        YandexGame.savesData.Coins = Data.Coins;
+        YandexGame.savesData.CurrentLevel = Data.CurrentLevel;
+        YandexGame.savesData.FakeLevel = Data.FakeLevel;
+        YandexGame.savesData.muteMusic = Data.muteMusic;
+        YandexGame.savesData.muteEffects = Data.muteEffects;
+        YandexGame.savesData.CostOfDamageImprovements = Data.CostOfDamageImprovements;
+        YandexGame.savesData.CostOfFiringRateImprovements = Data.CostOfFiringRateImprovements;
+        YandexGame.savesData.BaseDamage = Data.BaseDamage;
+        YandexGame.savesData.BaseFiringRate = Data.BaseFiringRate;
 
-        if (PlayerAccount.IsAuthorized)
-            PlayerAccount.SetCloudSaveData(jsonDataString);
-#endif
-    }
-
-    private void SaveBestScore(int bestScore)
-    {
-        Leaderboard.SetScore(_leaderboardTxt, bestScore);
+        YandexGame.SaveProgress();
     }
 }
 
 [Serializable]
 public class DataHolder
 {
-    public int Coins;
-    public int Score;
-    public int CurrentLevel;
-    public int FakeLevel;
-    public bool muteMusic;
-    public bool muteEffects;
-    public int CostOfDamageImprovements;
-    public int CostOfFiringRateImprovements;
-    public int BaseDamage;
-    public float BaseFiringRate;
+    public int Coins = 0;
+    public int CurrentLevel = 1;
+    public int FakeLevel = 1;
+    public bool muteMusic = false;
+    public bool muteEffects = false;
+    public int CostOfDamageImprovements = 10;
+    public int CostOfFiringRateImprovements = 10;
+    public int BaseDamage = 2;
+    public float BaseFiringRate = 2;
 }
