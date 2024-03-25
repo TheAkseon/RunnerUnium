@@ -24,7 +24,7 @@ public class CasesManager : MonoBehaviour
 
     private void Start()
     {
-        _adsButton.SetActive(false);
+        // _adsButton.SetActive(false);
 
         foreach (var itemGameObject in _itemGameObjects)
         {
@@ -61,10 +61,10 @@ public class CasesManager : MonoBehaviour
             {
                 OpenCase(buttonId);
 
-                if (_adsButton.activeSelf == false)
-                {
-                    _adsButton.SetActive(true);
-                }
+                // if (_adsButton.activeSelf == false)
+                // {
+                //     _adsButton.SetActive(true);
+                // }
 
                 if (_openedCases == _freeCaseCount)
                 {
@@ -77,10 +77,10 @@ public class CasesManager : MonoBehaviour
                 OpenCase(buttonId);
 
 
-                if (_adsButton.activeSelf == false)
-                {
-                    _adsButton.SetActive(true);
-                }
+                // if (_adsButton.activeSelf == false)
+                // {
+                //     _adsButton.SetActive(true);
+                // }
             }
         }
     }
@@ -105,7 +105,7 @@ public class CasesManager : MonoBehaviour
         SaveData.Instance.Data.Coins += _amount;
         CoinManager.Instance.UpdateView();
         UIBehaviour.Instance.UpdateCoins(SaveData.Instance.Data.Coins);
-        _adsButton.SetActive(false);
+        // _adsButton.SetActive(false);
     }
 
     private void OpenCase(int buttonId)
@@ -134,7 +134,7 @@ public class CasesManager : MonoBehaviour
             }
         }
 
-        _adsButton.SetActive(true);
+        // _adsButton.SetActive(true);
         _exitButton.SetActive(true);
     }
 
