@@ -151,9 +151,10 @@ public class UIBehaviour : MonoBehaviour
         _gameOverPanel.SetActive(false);
         _inputSlider.SetActive(true);
         PlayerModifier.Instance.Reberth();
-        PlayerMove.Instance.ResumeMovement();
-        PlayerMove.Instance.ApplyInvulnerable();
-        PlayerAnimationController.Instance.Run();
+        timerAfterAds.TimerStart();
+        // PlayerMove.Instance.ResumeMovement();
+        // PlayerMove.Instance.ApplyInvulnerable();
+        // PlayerAnimationController.Instance.Run();
     }
 
     public void Continue()

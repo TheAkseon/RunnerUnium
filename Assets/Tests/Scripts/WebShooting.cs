@@ -69,8 +69,8 @@ public class WebShooting : MonoBehaviour
                         Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), Quaternion.identity);
                         break;
                     case "DoubleShootMode":
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), rotation);
-                        Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), leftRotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(0.1f, 1f, 1.5f), rotation);
+                        Instantiate(Web, _playertransform.position + new Vector3(-0.1f, 1f, 1.5f), leftRotation);
                         break;
                     case "TripleShootMode":
                         Instantiate(Web, _playertransform.position + new Vector3(0f, 1f, 1.5f), rotation);
