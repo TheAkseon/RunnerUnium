@@ -154,6 +154,7 @@ public class UIBehaviour : MonoBehaviour
         PlayerMove.Instance.ResumeMovement();
         PlayerMove.Instance.ApplyInvulnerable();
         PlayerAnimationController.Instance.Run();
+        YandexAds.Instance.OnAdRewardedFalse();
     }
 
     public void Continue()
