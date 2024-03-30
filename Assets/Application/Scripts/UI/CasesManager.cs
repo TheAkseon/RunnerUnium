@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
 using UnityEngine.EventSystems;
+using YG;
 
 public class CasesManager : MonoBehaviour
 {
@@ -159,6 +160,7 @@ public class CasesManager : MonoBehaviour
     {
         //����� ����� �������� �������, �� ������ � ������� 3 2 1 �������
         gameObject.SetActive(false);
+        YandexGame.FullscreenShow();
         LevelBehaviour.Instance.NextLevel();
         SaveData.Instance.SaveYandex();
     }

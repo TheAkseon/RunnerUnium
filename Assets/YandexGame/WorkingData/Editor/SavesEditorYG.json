@@ -1,16 +1,16 @@
 {
-    "idSave": 2308,
+    "idSave": 2735,
     "isFirstSession": false,
     "language": "ru",
     "promptDone": false,
-    "Coins": 11866,
+    "Coins": 7174,
     "Score": 0,
-    "CurrentLevel": 21,
-    "FakeLevel": 21,
+    "CurrentLevel": 25,
+    "FakeLevel": 25,
     "muteMusic": true,
     "muteEffects": true,
     "CostOfDamageImprovements": 9680,
-    "CostOfFiringRateImprovements": 3936,
+    "CostOfFiringRateImprovements": 8856,
     "BaseDamage": 18,
-    "BaseFiringRate": 7.5
+    "BaseFiringRate": 8.5
 }
