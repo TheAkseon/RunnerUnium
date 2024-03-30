@@ -57,9 +57,9 @@ public class YandexAds : MonoBehaviour
 
     public void OnAdOpen()
     {
-        YandexSDK.Instance.IsAdRunning = true;
         Time.timeScale = 0;
         AudioListener.volume = 0;
+        YandexSDK.Instance.IsAdRunning = true;
     }
 
     public void OnAdClose()

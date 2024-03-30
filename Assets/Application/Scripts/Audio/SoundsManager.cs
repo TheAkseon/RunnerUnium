@@ -14,7 +14,7 @@ public class SoundsManager : MonoBehaviour
     private float _startVolume;
 
     private float _fadeDuration = 0.5f;
-    private string _nameSoundLevel;
+    private string _nameSoundLevel = "1";
 
     public string NameSoundLevel => _nameSoundLevel;
 
@@ -37,16 +37,8 @@ public class SoundsManager : MonoBehaviour
 
         int levelNumber = SceneManager.GetActiveScene().buildIndex;
 
-        if (levelNumber <= 6)
-        {
-            _soundsDatabase.Play(levelNumber.ToString());
-            _nameSoundLevel = levelNumber.ToString();
-        }
-        else
-        {
-            _nameSoundLevel = UnityEngine.Random.Range(1, 7).ToString();
-            _soundsDatabase.Play(_nameSoundLevel);
-        }
+        _nameSoundLevel = 1.ToString();
+        _soundsDatabase.Play(_nameSoundLevel);
 
         _soundsDatabase.Loop = true;
     }
