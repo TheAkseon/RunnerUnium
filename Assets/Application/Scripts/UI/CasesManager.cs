@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.EventSystems;
 
 public class CasesManager : MonoBehaviour
 {
@@ -73,8 +74,8 @@ public class CasesManager : MonoBehaviour
             }
             else
             {
-                Time.timeScale = 0;
-                Debug.Log("Время = 0");
+                EventSystem.current.enabled = false;
+
                 YandexAds.Instance.ShowRewardAd(1);
                 StartCoroutine(CheckRewarded(buttonId));
 
@@ -95,7 +96,8 @@ public class CasesManager : MonoBehaviour
 
         if(YandexAds.Instance.IsRewarded == true)
         {
-            OpenCase(buttonId);
+           EventSystem.current.enabled = true;
+           OpenCase(buttonId);
         }
     }
 
