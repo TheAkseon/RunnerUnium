@@ -73,9 +73,10 @@ public class CasesManager : MonoBehaviour
             }
             else
             {
+                Time.timeScale = 0;
+                Debug.Log("Время = 0");
                 YandexAds.Instance.ShowRewardAd(1);
                 StartCoroutine(CheckRewarded(buttonId));
-
 
                 // if (_adsButton.activeSelf == false)
                 // {
@@ -92,7 +93,10 @@ public class CasesManager : MonoBehaviour
             yield return null;
         }
 
-        OpenCase(buttonId);
+        if(YandexAds.Instance.IsRewarded == true)
+        {
+            OpenCase(buttonId);
+        }
     }
 
     private IEnumerator CheckRewarded()
