@@ -44,50 +44,23 @@ public class GateAppearaence : MonoBehaviour
     [SerializeField] TextMeshProUGUI _downText;
     [SerializeField] TextMeshProUGUI _topText;
 
-    private static string DamageText = "Урон";
-    private static string LifeTimeText = "Дальность выстрела";
-    private static string FiringFrequencyText = "Частота выстрела";
-    private static string SingleShootModeText = "Одинарный выстрел";
-    private static string DoubleShootModeText = "Двойной выстрел";
-    private static string TripleShootModeText = "Тройной выстрел";
-    private string _language;
+    private static string DamageText;
+    private static string LifeTimeText;
+    private static string FiringFrequencyText;
+    private static string SingleShootModeText;
+    private static string DoubleShootModeText;
+    private static string TripleShootModeText;
 
-    private void Start()
+    public void UpdateVisual(GateType deformationType, float value, string damageText, 
+        string lifeTimeText, string firingFrequencyText, string singleShootModeText, string doubleShootModeText, string tripleShootModeText)
     {
-        _language = YandexGame.EnvironmentData.language;
+        DamageText = damageText;
+        LifeTimeText = lifeTimeText;
+        FiringFrequencyText = firingFrequencyText;
+        SingleShootModeText = singleShootModeText;
+        DoubleShootModeText = doubleShootModeText;
+        TripleShootModeText = tripleShootModeText;
 
-        switch (_language)
-        {
-            case "ru":
-                DamageText = "Урон";
-                LifeTimeText = "Дальность выстрела";
-                FiringFrequencyText = "Частота выстрела";
-                SingleShootModeText = "Одинарный выстрел";
-                DoubleShootModeText = "Двойной выстрел";
-                TripleShootModeText = "Тройной выстрел";
-                break;
-            case "en":
-                DamageText = "Damage";
-                LifeTimeText = "Shot range";
-                FiringFrequencyText = "Fire rate";
-                SingleShootModeText = "Single shot";
-                DoubleShootModeText = "Double shot";
-                TripleShootModeText = "Triple shot";
-                break;
-            case "tr":
-                DamageText = "Zarar";
-                LifeTimeText = "Atış aralığı";
-                FiringFrequencyText = "Atış sıklığı";
-                SingleShootModeText = "Tek atış";
-                DoubleShootModeText = "Çift vuruş";
-                TripleShootModeText = "Üçlü atış";
-                break;
-        }
-    }
-
-
-    public void UpdateVisual(GateType deformationType, float value)
-    {
         string prefix = "";
 
         if (value == 0) 
@@ -117,7 +90,7 @@ public class GateAppearaence : MonoBehaviour
 
         _downText.text = deformationType switch
         {
-            GateType.FiringFrequency => prefix + value.ToString() + "/c",
+            GateType.FiringFrequency => prefix + value.ToString() + "/с",
             GateType.SingleShootMode => string.Empty,
             GateType.DoubleShootMode => string.Empty,
             GateType.TripleShootMode => string.Empty,
