@@ -1,6 +1,8 @@
+п»їusing System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public enum GateType { 
     Damage,
@@ -25,15 +27,15 @@ public class GateAppearaence : MonoBehaviour
 
 
     [Header("Title Icons")]
-    // Иконки увеличения/уменьшения ширины
+    // РРєРѕРЅРєРё СѓРІРµР»РёС‡РµРЅРёСЏ/СѓРјРµРЅСЊС€РµРЅРёСЏ С€РёСЂРёРЅС‹
     [SerializeField] GameObject _expandLable;
     [SerializeField] GameObject _shrinkLable;
-    // Иконки увеличения/уменьшения высоты
+    // РРєРѕРЅРєРё СѓРІРµР»РёС‡РµРЅРёСЏ/СѓРјРµРЅСЊС€РµРЅРёСЏ РІС‹СЃРѕС‚С‹
     [SerializeField] GameObject _upLable;
     [SerializeField] GameObject _downLable;
 
     [Header("Sprites")]
-    // Изображения типа стрельбы
+    // РР·РѕР±СЂР°Р¶РµРЅРёСЏ С‚РёРїР° СЃС‚СЂРµР»СЊР±С‹
     [SerializeField] Sprite _singleShootSprite;
     [SerializeField] Sprite _doubleShootSprite;
     [SerializeField] Sprite _tripleShootSprite;
@@ -42,16 +44,47 @@ public class GateAppearaence : MonoBehaviour
     [SerializeField] TextMeshProUGUI _downText;
     [SerializeField] TextMeshProUGUI _topText;
 
-    private static readonly string DamageText = "Урон";
-    private static readonly string LifeTimeText = "Дальность выстрела";
-    private static readonly string FiringFrequencyText = "Частота выстрела";
-    private static readonly string SingleShootModeText = "Одинарный выстрел";
-    private static readonly string DoubleShootModeText = "Двойной выстрел";
-    private static readonly string TripleShootModeText = "Тройной выстрел";
+    private static string DamageText = "РЈСЂРѕРЅ";
+    private static string LifeTimeText = "Р”Р°Р»СЊРЅРѕСЃС‚СЊ РІС‹СЃС‚СЂРµР»Р°";
+    private static string FiringFrequencyText = "Р§Р°СЃС‚РѕС‚Р° РІС‹СЃС‚СЂРµР»Р°";
+    private static string SingleShootModeText = "РћРґРёРЅР°СЂРЅС‹Р№ РІС‹СЃС‚СЂРµР»";
+    private static string DoubleShootModeText = "Р”РІРѕР№РЅРѕР№ РІС‹СЃС‚СЂРµР»";
+    private static string TripleShootModeText = "РўСЂРѕР№РЅРѕР№ РІС‹СЃС‚СЂРµР»";
+    private string _language;
 
 
     public void UpdateVisual(GateType deformationType, float value)
     {
+        _language = YandexGame.EnvironmentData.language;
+
+        switch (_language)
+        {
+            case "ru":
+                DamageText = "РЈСЂРѕРЅ";
+                LifeTimeText = "Р”Р°Р»СЊРЅРѕСЃС‚СЊ РІС‹СЃС‚СЂРµР»Р°";
+                FiringFrequencyText = "Р§Р°СЃС‚РѕС‚Р° РІС‹СЃС‚СЂРµР»Р°";
+                SingleShootModeText = "РћРґРёРЅР°СЂРЅС‹Р№ РІС‹СЃС‚СЂРµР»";
+                DoubleShootModeText = "Р”РІРѕР№РЅРѕР№ РІС‹СЃС‚СЂРµР»";
+                TripleShootModeText = "РўСЂРѕР№РЅРѕР№ РІС‹СЃС‚СЂРµР»";
+                break;
+            case "en":
+                DamageText = "Damage";
+                LifeTimeText = "Shot range";
+                FiringFrequencyText = "Fire rate";
+                SingleShootModeText = "Single shot";
+                DoubleShootModeText = "Double shot";
+                TripleShootModeText = "Triple shot";
+                break;
+            case "tr":
+                DamageText = "Zarar";
+                LifeTimeText = "AtД±Еџ aralД±ДџД±";
+                FiringFrequencyText = "AtД±Еџ sД±klД±ДџД±";
+                SingleShootModeText = "Tek atД±Еџ";
+                DoubleShootModeText = "Г‡ift vuruЕџ";
+                TripleShootModeText = "ГњГ§lГј atД±Еџ";
+                break;
+        }
+
         string prefix = "";
 
         if (value == 0) 

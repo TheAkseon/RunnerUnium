@@ -276,6 +276,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2daa34a5e867966409624dee882c0afd, type: 3}
+--- !u!1 &111700374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 111700375}
+  - component: {fileID: 111700376}
+  m_Layer: 0
+  m_Name: Fire rate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &111700375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111700374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6240053361598705160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &111700376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111700374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: Russian
+    Text: "\u0427\u0430\u0441\u0442\u043E\u0442\u0430 \u0432\u044B\u0441\u0442\u0440\u0435\u043B\u0430"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: "At\u0131\u015F s\u0131kl\u0131\u011F\u0131"
+    Object: {fileID: 0}
+  - Language: English
+    Text: Fire rate
+    Object: {fileID: 0}
 --- !u!1001 &330143091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -577,6 +632,61 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: caf9732433f4dc044845763962493607, type: 3}
+--- !u!1 &874826619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874826620}
+  - component: {fileID: 874826621}
+  m_Layer: 0
+  m_Name: Damage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874826620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874826619}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6240053361598705160}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &874826621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874826619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb15fa0e7301ff849bf4d6dcede7c12b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  data: 0
+  entries:
+  - Language: Russian
+    Text: "\u0423\u0440\u043E\u043D"
+    Object: {fileID: 0}
+  - Language: Turkish
+    Text: Zarar
+    Object: {fileID: 0}
+  - Language: English
+    Text: Damage
+    Object: {fileID: 0}
 --- !u!1 &1020777027
 GameObject:
   m_ObjectHideFlags: 0
@@ -1213,7 +1323,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6240053362053640675, guid: 23e9441c49c7e194badd7aa65687f4a8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 111700375}
+    - targetCorrespondingSourceObject: {fileID: 6240053362053640675, guid: 23e9441c49c7e194badd7aa65687f4a8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 874826620}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e9441c49c7e194badd7aa65687f4a8, type: 3}
 --- !u!114 &6240053361598705158 stripped
@@ -1228,6 +1346,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8899b6b86721cf408a09d03a590804e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &6240053361598705160 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6240053362053640675, guid: 23e9441c49c7e194badd7aa65687f4a8,
+    type: 3}
+  m_PrefabInstance: {fileID: 6240053361598705157}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8871649944194227046
 PrefabInstance:
   m_ObjectHideFlags: 0
