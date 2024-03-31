@@ -9,7 +9,7 @@ public class Gate : MonoBehaviour
     [SerializeField] private GateAppearaence _gateAppearaence;
     [SerializeField] private GameObject _effectPrefab;
     [SerializeField] private Transform _particlePosition;
-    private string _language = "tr";
+    private string _language = "ru";
     private string DamageText;
     private string LifeTimeText;
     private string FiringFrequencyText;
