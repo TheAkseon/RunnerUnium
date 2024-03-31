@@ -10,7 +10,7 @@ public class PlayerMove : MonoBehaviour
 
     // New movement
     [SerializeField] private float speed = 2;
-    [SerializeField] private float speedX = 2;
+    [SerializeField] private float speedX = 1.5f;
     [SerializeField] float _maxPosX = 3f;
     [SerializeField] private float _timeApplyInvulnerble = 0.1f;
 
