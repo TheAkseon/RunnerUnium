@@ -38,7 +38,6 @@ public class UIBehaviour : MonoBehaviour
     [SerializeField] Sprite yesSprite;
 
     [Header("Game Over Panel")]
-    [SerializeField] GameObject _continueButton;
     [SerializeField] GameObject _restartButton;
     public TimerAfterAds timerAfterAds;
 
@@ -159,7 +158,7 @@ public class UIBehaviour : MonoBehaviour
         YandexAds.Instance.OnAdRewardedFalse();
     }
 
-    public void Continue()
+    /*public void Continue()
     {
 #if UNITY_WEBGL && !UNITY_EDITOR
         Time.timeScale = 0f;
@@ -172,13 +171,12 @@ public class UIBehaviour : MonoBehaviour
         // PlayerMove.Instance.ResumeMovement();
         timerAfterAds.TimerStart();
 #endif
-    }
+    }*/
 
     public void GameOver(bool _isBoss)
     {
         if (_isBoss)
         {
-            BlockContinueButton();
             SoundsManager.Instance.FadeOut();
             SoundsManager.Instance.PlaySound("GameOver");
         }
@@ -188,11 +186,11 @@ public class UIBehaviour : MonoBehaviour
         PlayerMove.Instance.StopMovement();
     }
 
-    private void BlockContinueButton()
+    /*private void BlockContinueButton()
     {
         _continueButton.SetActive(false);
         _restartButton.GetComponent<RectTransform>().localPosition = new Vector3(0, -440, 0);
-    }
+    }*/
 
     public void Restart()
     {
