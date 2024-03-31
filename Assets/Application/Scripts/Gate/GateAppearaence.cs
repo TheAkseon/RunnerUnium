@@ -52,8 +52,7 @@ public class GateAppearaence : MonoBehaviour
     private static string TripleShootModeText = "Тройной выстрел";
     private string _language;
 
-
-    public void UpdateVisual(GateType deformationType, float value)
+    private void Start()
     {
         _language = YandexGame.EnvironmentData.language;
 
@@ -84,7 +83,11 @@ public class GateAppearaence : MonoBehaviour
                 TripleShootModeText = "Üçlü atış";
                 break;
         }
+    }
 
+
+    public void UpdateVisual(GateType deformationType, float value)
+    {
         string prefix = "";
 
         if (value == 0) 
