@@ -158,7 +158,6 @@ public class CasesManager : MonoBehaviour
 
     public void ExitCases()
     {
-        //����� ����� �������� �������, �� ������ � ������� 3 2 1 �������
         gameObject.SetActive(false);
         YandexGame.FullscreenShow();
         LevelBehaviour.Instance.NextLevel();

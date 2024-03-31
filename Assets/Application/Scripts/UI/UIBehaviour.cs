@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using YG;
 
 public class UIBehaviour : MonoBehaviour
 {
@@ -195,6 +196,7 @@ public class UIBehaviour : MonoBehaviour
 
     public void Restart()
     {
+        YandexGame.FullscreenShow();
         LevelBehaviour.Instance.Restart();
     }
 
